@@ -10,20 +10,26 @@ import java.util.List;
 public class Logic {
     private int index = 0;
 
-    private final Ship[] ship = new Ship[20];
+    private final Ship[] ships = new Ship[20];
 
-    private void addShip(Ship ship) {
-        addToArray(ship);
-        List<Coordinates> positions = ship.position();
+    public void addShip(Grid grid) {
+        addToArray(grid);
+        List<Coordinates> positions = grid.positions();
     }
 
     private void addToArray(Ship ship) {
-        this.ship[this.index++] = ship;
+
+        this.ships[this.index++] = ship;
     }
 
-    private void buildTeam() {
-        addShip(Grid(positions.add()));
-
+    public int findBy(Coordinates coordinates) {
+        for (int index = 0; index < ships.length; index++) {
+            Ship ship = ships[index];
+            if (ship != null && ship.positions().equals(coordinates)) {
+                return index;
+            }
+        }
+        System.out.println("Ship doesn't exist.");
+        return -1;
     }
-
 }

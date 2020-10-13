@@ -1,19 +1,21 @@
 package Battleship.model;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class Grid implements Ship {
-    private final List<Coordinates> positions = new ArrayList<>();
+
+    private final ArrayList<Coordinates> positions;
 
 
-    public Grid(final Coordinates coordinates) {
-        positions.addAll(Collections.singletonList(coordinates));
+    public Grid(final ArrayList<Coordinates> positions) {
+        this.positions = positions;
     }
 
+
+
     @Override
-    public List<Coordinates> position() {
-        return null;
+    public List<Coordinates> positions() {
+        return positions;
     }
 }
