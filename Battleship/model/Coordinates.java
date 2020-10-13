@@ -11,8 +11,8 @@ public enum Coordinates {
     H0(7, 0), H1(7, 1), H2(7, 2), H3(7, 3), H4(7, 4), H5(7, 5), H6(7, 6), H7(7, 7), H8(7, 8), H9(7, 9),
     I0(8, 0), I1(8, 1), I2(8, 2), I3(8, 3), I4(8, 4), I5(8, 5), I6(8, 6), I7(8, 7), I8(8, 8), I9(8, 9),
     J0(9, 0), J1(9, 1), J2(9, 2), J3(9, 3), J4(9, 4), J5(9, 5), J6(9, 6), J7(9, 7), J8(9, 8), J9(9, 9);
-    public final int x;
-    public final int y;
+    private final int x;
+    private final int y;
 
     Coordinates(int x, int y) {
         this.x = x;
