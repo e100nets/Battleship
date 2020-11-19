@@ -35,4 +35,9 @@ public class GridService {
     public boolean isEmpty(Coordinates coordinate) {
         return ships[coordinate.getX()][coordinate.getY()] == null;
     }
+
+    public void hit(Coordinates coordinate) {
+        ships[coordinate.getX()][coordinate.getY()] = null;
+    }
 }
+

@@ -25,24 +25,23 @@ public class MainView {
 
             do {
                 if (redGrid.isEmpty(blueShot)) {
-                    try {
-                        throw new MissException();
-                    } catch (MissException e) {
-                        System.out.println("MISS");
-                        if (turn == Turn.BLUE) {
-                            turn = Turn.RED;
-                        } else {
-                            turn = Turn.BLUE;
-                        }
 
+                    System.out.println("MISS");
+                    if (turn == Turn.BLUE) {
+                        turn = Turn.RED;
+                    } else {
+                        turn = Turn.BLUE;
                     }
+
+
                 } else {
+                    redGrid.hit(blueShot);
                     System.out.println("HIT");
                     break;
                 }
             } while (!redGrid.isEmpty(blueShot));
 
-            System.out.println( "RED TURN");
+            System.out.println("RED TURN");
             System.out.println("Введите координаты выстрела: ");
             Coordinates redShot = Coordinates.valueOf(scanner.nextLine());
 
@@ -60,6 +59,7 @@ public class MainView {
 
                     }
                 } else {
+                    blueGrid.hit(redShot);
                     System.out.println("HIT");
                     break;
                 }
